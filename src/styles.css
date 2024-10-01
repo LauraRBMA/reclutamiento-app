@@ -1,42 +1,120 @@
-/* Estilos comunes para todos los formularios */
-
-*{
-  outline: 1px solid red;
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
 }
 
-.form-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+body {
+  background-color: #f9f5f6; /* Fondo rosado claro */
+  color: #333; /* Texto principal */
+  padding: 20px;
+}
+
+/* Links estilo general */
+a {
+  color: #ff6587;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff3b6b;
+}
+
+/* Botones generales */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff6587;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff3b6b;
+}
+
+/* Inputs generales */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ffe6e9;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: #ff6587;
+  outline: none;
+}
+
+label {
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Tablas generales */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+th {
+  background-color: #ffe6e9;
+  color: #333;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+tbody tr:hover {
+  background-color: #ffedf0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  table, th, td {
+    font-size: 14px;
   }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
+
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  input[type="number"],
+  select {
+    font-size: 14px;
   }
-  
-  .form-group input,
-  .form-group select {
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  
-  .form-button {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-  }
-  
+
   button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
+    padding: 8px 15px;
   }
-  
-  button:hover {
-    opacity: 0.9;
-  }
-  
+}

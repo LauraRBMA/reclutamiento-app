@@ -13,7 +13,9 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let solicitud of solicitudes">
+  
+    @for (solicitud of solicitudes; track solicitud.id) {
+      <tr>
       <td>{{ solicitud.nombreCompleto }}</td>
       <td>{{ solicitud.email }}</td>
       <td>{{ solicitud.edad }}</td>
@@ -24,6 +26,8 @@
       <td>
         <a [routerLink]="['/solicitudes/editar', solicitud.id]">Editar</a>
       </td>
+    
     </tr>
+  }
   </tbody>
 </table>

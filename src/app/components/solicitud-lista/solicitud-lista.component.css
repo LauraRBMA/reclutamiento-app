@@ -1,52 +1,96 @@
-/* Ajustes adicionales para mejorar la tabla dentro del contenedor */
+/* Estilos para el contenedor de la lista */
 .solicitud-lista {
-    margin:auto;
-    border: 2px dashed #ff99aa;
-    padding: 30px;
-    background-color: #fff8f9;
-    border-radius: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
-  }
-  
-  .styled-table {
-   
-    border-collapse: collapse;
-  }
-  
+  margin: auto;
+  border: 2px solid #ff99aa; /* Cambié de dashed a solid */
+  padding: 30px;
+  background-color: #fff; /* Fondo blanco para mayor contraste */
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombras más pronunciadas */
+  max-width: 1200px;
+  overflow-x: auto; /* Para mantener la tabla responsiva */
+}
+
+/* Estilo para la tabla */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff8f9; /* Ligero tono rosado */
+  font-size: 16px;
+  text-align: left;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabecera de la tabla */
+.styled-table thead {
+  background-color: #ff99aa; /* Color rosado más fuerte para la cabecera */
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.styled-table th {
+  padding: 15px;
+  border-bottom: 2px solid #ddd; /* Bordes más definidos */
+  font-weight: bold;
+}
+
+/* Celdas de la tabla */
+.styled-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle; /* Alineación de texto */
+}
+
+/* Colores alternativos para las filas */
+.styled-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* Color de fila par más suave */
+}
+
+.styled-table tbody tr:nth-child(odd) {
+  background-color: #ffe6e9; /* Color rosado claro para filas impares */
+}
+
+/* Hover para filas */
+.styled-table tbody tr:hover {
+  background-color: #ffccd5; /* Fila con efecto hover en rosado */
+}
+
+/* Estilo para las acciones */
+.styled-table td:last-child {
+  text-align: center;
+  white-space: nowrap;
+  width: 150px; /* Más espacio para las acciones */
+}
+
+/* Estilo para los enlaces dentro de la tabla */
+.styled-table td a {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #ff6587;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.styled-table td a:hover {
+  background-color: #ff3b6b;
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
   .styled-table th, .styled-table td {
-    padding: 12px 15px; 
-    text-align: left;
-    border: 1px solid #f8c2cc;
+    padding: 10px 12px;
+    font-size: 14px;
   }
-  
-  .styled-table thead {
-    background-color: #ffe6e9;
-  }
-  
-  .styled-table tbody tr:nth-child(even) {
-    background-color: #f8f8f8;
-  }
-  
-  .styled-table tbody tr:hover {
-    background-color: #ffedf0;
-  }
-  
-  /* Ajuste para las acciones en la tabla */
-  .styled-table td:last-child {
-    text-align: center;
-    white-space: nowrap;
-    width: 120px; 
-  }
-  
+
   .styled-table td a {
-    display: inline-block;
-    padding: 5px 10px;
-    background-color: #ff6587;
-    color: white;
-    border-radius: 5px;
+    padding: 5px 8px;
+    font-size: 12px;
   }
-  
-  .styled-table td a:hover {
-    background-color: #ff3b6b;
+
+  .styled-table td:last-child {
+    width: 100px;
   }
-  
+}
