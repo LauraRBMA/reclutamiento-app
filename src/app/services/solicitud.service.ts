@@ -6,9 +6,27 @@ import { Solicitud } from '../models/solicitud.model';
 })
 export class SolicitudService {
   private solicitudes: Solicitud[] = [
-    // Datos de ejemplo, puedes eliminarlos si no quieres valores por defecto
-    new Solicitud('Juan Pérez', 'juan.perez@email.com', new Date('1990-05-15'), 5, 'Desarrollador', '2024-01-01', 'en espera'),
-    new Solicitud('Ana García', 'ana.garcia@email.com', new Date('1985-07-23'), 10, 'Diseñadora', '2024-01-02', 'aprobado'),
+    new Solicitud(
+      1,
+      'Juan Pérez',
+      'juan.perez@email.com',
+      new Date('1990-05-15'),
+      5,
+      'Desarrollador',
+      '2023-09-15',
+      'aprobado'
+    ),
+    new Solicitud(
+      2,
+      'Ana García',
+      'ana.garcia@email.com',
+      new Date('1988-03-10'),
+      8,
+      'Gerente de Proyectos',
+      '2023-09-10',
+      'en espera'
+    ),
+    // Otras solicitudes
   ];
 
   constructor() {}

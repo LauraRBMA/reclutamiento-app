@@ -1,0 +1,25 @@
+/* Estilo único para "solicitud-nueva" */
+.solicitud-nueva-form {
+    border: 2px solid #ffc1cc;
+    background-image: linear-gradient(to right, #ffdde1, #ff99aa);
+    padding: 30px;
+    border-radius: 15px;
+  }
+  
+  .solicitud-nueva-form .form-group input {
+    background-color: #fff8f9;
+    border: 1px solid #ffc1cc;
+  }
+  
+  .solicitud-nueva-form .form-group select {
+    border-color: #ff7799;
+  }
+  
+  .solicitud-nueva-form .form-button button[type="submit"] {
+    background-color: #ff6587;
+  }
+  
+  .solicitud-nueva-form .form-button button[type="submit"]:hover {
+    background-color: #ff3b6b;
+  }
+  

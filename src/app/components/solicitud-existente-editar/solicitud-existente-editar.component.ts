@@ -13,13 +13,13 @@ import { SolicitudService } from './../../services/solicitud.service';
   templateUrl: './solicitud-existente-editar.component.html',
   styleUrls: ['./solicitud-existente-editar.component.css'],
 })
-export class SolicitudFormComponent {
-  solicitud: Solicitud = new Solicitud('', '', new Date(), 0, '', '', 'en espera');
+export class SolicitudExistenteComponent {
+  solicitud: Solicitud = new Solicitud(0,'', '', new Date(), 0, '', '', 'en espera');
 
-  constructor(private SolicitudService: SolicitudService, private router: Router) {}
+  constructor(private SolicitudService: SolicitudService, public router: Router) {}
 
   guardarSolicitud(): void {
-    this.solicitudService.addSolicitud(this.solicitud);
+    this.SolicitudService.agregarSolicitud(this.solicitud);
     this.router.navigate(['/solicitudes']);
   }
 }

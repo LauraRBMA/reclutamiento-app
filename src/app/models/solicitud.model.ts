@@ -1,5 +1,6 @@
 export class Solicitud {
   constructor(
+    public id : number,
     public nombreCompleto: string,
     public email: string,
     public fechaNacimiento: Date,

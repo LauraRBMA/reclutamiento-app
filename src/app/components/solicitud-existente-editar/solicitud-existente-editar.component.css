@@ -1,0 +1,30 @@
+/* Estilo único para "solicitud-editar" */
+.solicitud-editar {
+    border: 1px solid #ffb5c2;
+    background-color: #ffeff4;
+    padding: 30px;
+    border-radius: 10px;
+  }
+  
+  .solicitud-editar .form-group input {
+    border: 2px solid #ff7799;
+  }
+  
+  .solicitud-editar .form-group select {
+    border-color: #ff3b6b;
+  }
+  
+  .solicitud-editar .form-group label {
+    font-weight: bold;
+    color: #ff6587;
+  }
+  
+  .solicitud-editar .form-button button {
+    background-color: #3a9dff;
+    color: #fff;
+  }
+  
+  .solicitud-editar .form-button button:hover {
+    background-color: #005cbf;
+  }
+  

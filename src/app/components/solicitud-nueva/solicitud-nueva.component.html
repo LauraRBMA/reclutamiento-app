@@ -1,5 +1,5 @@
-<form [formGroup]="solicitudForm" (ngSubmit)="onSubmit()">
-  <div>
+<form [formGroup]="solicitudForm" (ngSubmit)="onSubmit()" class="form-container solicitud-nueva-form">
+  <div class="form-group">
     <label for="nombreCompleto">Nombre Completo</label>
     <input id="nombreCompleto" formControlName="nombreCompleto" type="text">
     <div *ngIf="solicitudForm.get('nombreCompleto')?.invalid && solicitudForm.get('nombreCompleto')?.touched">
@@ -7,7 +7,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="form-group">
     <label for="email">Email</label>
     <input id="email" formControlName="email" type="email">
     <div *ngIf="solicitudForm.get('email')?.invalid && solicitudForm.get('email')?.touched">
@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="form-group">
     <label for="fechaNacimiento">Fecha de Nacimiento</label>
     <input id="fechaNacimiento" formControlName="fechaNacimiento" type="date">
     <div *ngIf="solicitudForm.get('fechaNacimiento')?.invalid && solicitudForm.get('fechaNacimiento')?.touched">
@@ -23,7 +23,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="form-group">
     <label for="aniosExperiencia">Años de Experiencia</label>
     <input id="aniosExperiencia" formControlName="aniosExperiencia" type="number">
     <div *ngIf="solicitudForm.get('aniosExperiencia')?.invalid && solicitudForm.get('aniosExperiencia')?.touched">
@@ -31,7 +31,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="form-group">
     <label for="puestoSolicitado">Puesto Solicitado</label>
     <input id="puestoSolicitado" formControlName="puestoSolicitado" type="text">
     <div *ngIf="solicitudForm.get('puestoSolicitado')?.invalid && solicitudForm.get('puestoSolicitado')?.touched">
@@ -39,7 +39,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="form-group">
     <label for="estado">Estado</label>
     <select id="estado" formControlName="estado">
       <option value="aprobado">Aprobado</option>
@@ -48,5 +48,7 @@
     </select>
   </div>
 
-  <button type="submit" [disabled]="solicitudForm.invalid">Registrar Solicitud</button>
+  <div class="form-group form-button">
+    <button type="submit" [disabled]="solicitudForm.invalid">Registrar Solicitud</button>
+  </div>
 </form>
