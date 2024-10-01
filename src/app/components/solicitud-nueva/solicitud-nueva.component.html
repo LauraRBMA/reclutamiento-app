@@ -1,0 +1,52 @@
+<form [formGroup]="solicitudForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="nombreCompleto">Nombre Completo</label>
+    <input id="nombreCompleto" formControlName="nombreCompleto" type="text">
+    <div *ngIf="solicitudForm.get('nombreCompleto')?.invalid && solicitudForm.get('nombreCompleto')?.touched">
+      El nombre completo es obligatorio.
+    </div>
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input id="email" formControlName="email" type="email">
+    <div *ngIf="solicitudForm.get('email')?.invalid && solicitudForm.get('email')?.touched">
+      Introduce un email válido.
+    </div>
+  </div>
+
+  <div>
+    <label for="fechaNacimiento">Fecha de Nacimiento</label>
+    <input id="fechaNacimiento" formControlName="fechaNacimiento" type="date">
+    <div *ngIf="solicitudForm.get('fechaNacimiento')?.invalid && solicitudForm.get('fechaNacimiento')?.touched">
+      La fecha de nacimiento es obligatoria.
+    </div>
+  </div>
+
+  <div>
+    <label for="aniosExperiencia">Años de Experiencia</label>
+    <input id="aniosExperiencia" formControlName="aniosExperiencia" type="number">
+    <div *ngIf="solicitudForm.get('aniosExperiencia')?.invalid && solicitudForm.get('aniosExperiencia')?.touched">
+      Introduce un número de años válido.
+    </div>
+  </div>
+
+  <div>
+    <label for="puestoSolicitado">Puesto Solicitado</label>
+    <input id="puestoSolicitado" formControlName="puestoSolicitado" type="text">
+    <div *ngIf="solicitudForm.get('puestoSolicitado')?.invalid && solicitudForm.get('puestoSolicitado')?.touched">
+      El puesto solicitado es obligatorio.
+    </div>
+  </div>
+
+  <div>
+    <label for="estado">Estado</label>
+    <select id="estado" formControlName="estado">
+      <option value="aprobado">Aprobado</option>
+      <option value="rechazado">Rechazado</option>
+      <option value="en espera">En espera</option>
+    </select>
+  </div>
+
+  <button type="submit" [disabled]="solicitudForm.invalid">Registrar Solicitud</button>
+</form>

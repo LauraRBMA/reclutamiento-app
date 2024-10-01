@@ -1,0 +1,29 @@
+<h2>Lista de Solicitudes</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre Completo</th>
+      <th>Email</th>
+      <th>Edad</th>
+      <th>Años de Experiencia</th>
+      <th>Puesto Solicitado</th>
+      <th>Fecha de Solicitud</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let solicitud of solicitudes">
+      <td>{{ solicitud.nombreCompleto }}</td>
+      <td>{{ solicitud.email }}</td>
+      <td>{{ solicitud.edad }}</td>
+      <td>{{ solicitud.aniosExperiencia }}</td>
+      <td>{{ solicitud.puestoSolicitado }}</td>
+      <td>{{ solicitud.fechaSolicitud }}</td>
+      <td>{{ solicitud.estado }}</td>
+      <td>
+        <a [routerLink]="['/solicitudes/editar', solicitud.id]">Editar</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

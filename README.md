@@ -2,26 +2,29 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
-## Development server
+## COMPONENTES
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+    ## solicitud-lista.component.ts
+    Muestra la lista de solicitudes y permite filtrar y ordenar.
 
-## Code scaffolding
+    ## solicitud-editar.component.ts
+    Permite editar una solicitud existente.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    ## solicitud-nueva.component.ts
+    Permite crear una nueva solicitud.
 
-## Build
+## SERVICIOS
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    ## solicitud.service.ts
+    Servicio para manejar las solicitudes (obtener, crear y actualizar).
 
-## Running unit tests
+## MODELOS
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    ## solicitud.model.ts
+    Modelo que define la estructura de una solicitud.
 
-## Running end-to-end tests
+## RUTAS
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    ## AppRoutingModule 
+    Para definir las rutas de navegación entre la lista de solicitudes, la edición, y la creación de solicitudes.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
