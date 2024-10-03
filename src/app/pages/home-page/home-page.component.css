@@ -1,0 +1,124 @@
+/* Contenedor principal centrado */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); /* Degradado suave de rosado a lila */
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  /* Formas geométricas decorativas */
+  .home-container::before,
+  .home-container::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    animation: float 10s infinite ease-in-out;
+  }
+  
+  .home-container::before {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    left: -50px;
+  }
+  
+  .home-container::after {
+    width: 400px;
+    height: 400px;
+    bottom: -80px;
+    right: -100px;
+  }
+  
+  /* Animación de "flotación" de las formas */
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  /* Estilos del título */
+  h1 {
+    font-size: 3rem;
+    color: #ffffff; /* Blanco brillante */
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar el texto */
+  }
+  
+  /* Descripción */
+  p {
+    font-size: 1.2rem;
+    color: #fefefe;
+    margin-bottom: 40px;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Contenedor de los botones */
+  .home-links {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  /* Botones personalizados */
+  .home-button {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background: linear-gradient(135deg, #ff6a88 0%, #ff99aa 100%); /* Degradado rosado */
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra para dar efecto 3D */
+  }
+  
+  .home-button:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el cursor */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Sombra más intensa al hacer hover */
+  }
+  
+  /* Pie de página */
+  footer {
+    font-size: 0.9rem;
+    color: #fff;
+    position: absolute;
+    bottom: 20px;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Responsive: Ajustes para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  
+    .home-button {
+      font-size: 1rem;
+      padding: 12px 30px;
+    }
+  
+    .home-links {
+      gap: 20px;
+    }
+  }
+  
