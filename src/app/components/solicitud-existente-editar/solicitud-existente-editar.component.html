@@ -4,7 +4,7 @@
   <form (ngSubmit)="guardarSolicitud()" class="form-container">
     <div class="form-group">
       <label for="nombreCompleto">Nombre Completo:</label>
-      <input type="text" id="nombre" [(ngModel)]="solicitud.nombreCompleto" name="nombre" required />
+      <input type="text" id="nombreCompleto" [(ngModel)]="solicitud.nombreCompleto" name="nombreCompleto" required />
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
@@ -24,23 +24,15 @@
     </div>
     <div class="form-group">
       <label for="estado">Estado:</label>
-      <select id="estado" [(ngModel)]="solicitud.estado" name="estado">
-        <option value="en espera">En Espera</option>
+      <select id="estado" [(ngModel)]="solicitud.estado" name="estado" required>
+        <option value="en espera">En espera</option>
         <option value="aprobado">Aprobado</option>
         <option value="rechazado">Rechazado</option>
       </select>
     </div>
-
-    <div class="form-group">
-      <label>Fecha de Solicitud:</label>
-      <input type="text" [value]="solicitud.fechaSolicitud" disabled />
-    </div>
-
-    <div class="form-group form-button">
-      <button type="submit">Guardar Cambios</button>
-      <button type="button" (click)="router.navigate([''])">Cancelar</button>
+    <div class="form-button">
+      <button type="submit">Guardar</button>
+      <button type="button" (click)="cancelar()">Cancelar</button>
     </div>
   </form>
 </div>
-
-  

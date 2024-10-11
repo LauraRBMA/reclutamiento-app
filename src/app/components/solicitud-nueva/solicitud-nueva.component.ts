@@ -27,11 +27,22 @@ export class SolicitudNuevaComponent {
     });
   }
 
+
   onSubmit(): void {
     if (this.solicitudForm.valid) {
-      const nuevaSolicitud: Solicitud = this.solicitudForm.value;
+      const nuevaSolicitud = new Solicitud(
+        Date.now(), // Generar un ID único
+        this.solicitudForm.value.nombreCompleto,
+        this.solicitudForm.value.email,
+        new Date(this.solicitudForm.value.fechaNacimiento),
+        this.solicitudForm.value.aniosExperiencia,
+        this.solicitudForm.value.puestoSolicitado,
+        new Date().toISOString(), // Fecha de solicitud actual
+        this.solicitudForm.value.estado
+      );
+
       this.solicitudService.agregarSolicitud(nuevaSolicitud);
-      this.router.navigate(['/solicitudes']);
+      this.router.navigate(['/']); // Redirigir a la página principal o a otra página
     }
   }
 }

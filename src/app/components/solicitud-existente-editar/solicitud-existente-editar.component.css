@@ -1,30 +1,50 @@
 /* Estilo único para "solicitud-editar" */
 .solicitud-editar {
-    border: 1px solid #ffb5c2;
-    background-color: #ffeff4;
-    padding: 30px;
-    border-radius: 10px;
-  }
-  
-  .solicitud-editar .form-group input {
-    border: 2px solid #ff7799;
-  }
-  
-  .solicitud-editar .form-group select {
-    border-color: #ff3b6b;
-  }
-  
-  .solicitud-editar .form-group label {
-    font-weight: bold;
-    color: #ff6587;
-  }
-  
-  .solicitud-editar .form-button button {
-    background-color: #3a9dff;
-    color: #fff;
-  }
-  
-  .solicitud-editar .form-button button:hover {
-    background-color: #005cbf;
-  }
-  
+  border: 1px solid #ffb5c2;
+  background-color: #ffeff4;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.solicitud-editar .form-group {
+  margin-bottom: 15px;
+}
+
+.solicitud-editar .form-group input,
+.solicitud-editar .form-group select,
+.solicitud-editar .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ff7799;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.solicitud-editar .form-group select {
+  border-color: #ff3b6b;
+}
+
+.solicitud-editar .form-group label {
+  font-weight: bold;
+  color: #ff6587;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.solicitud-editar .form-button {
+  text-align: right;
+}
+
+.solicitud-editar .form-button button {
+  background-color: #ff6587; /* Cambiado a un tono diferente */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px; /* Añadido margen entre botones */
+}
+
+.solicitud-editar .form-button button:hover {
+  background-color: #e05575; /* Cambiado a un tono diferente */
+}
