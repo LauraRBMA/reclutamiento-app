@@ -8,7 +8,9 @@ export class Solicitud {
     public puestoSolicitado: string,
     public fechaSolicitud: string,
     public estado: string
-  ) {}
+  ) {
+    
+  }
 
   // Getter para calcular la edad en base a la fecha de nacimiento
   get edad(): string {

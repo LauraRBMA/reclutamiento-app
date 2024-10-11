@@ -1,13 +1,17 @@
 <div class="home-container">
     <p>Bienvenido a la Gestión de Candidatos</p>
-  
-    <div class="home-links">
-      <!-- Link para ver el listado de candidatos -->
-      <a [routerLink]="['/candidatos']" class="home-link">Ver Listado de Candidatos</a>
-  
-      <!-- Link para agregar nuevo candidato -->
-      <a [routerLink]="['/solicitudes/nueva']" class="home-link">Agregar Nuevo Candidato</a>
-    </div>
+
+    
+
+    <nav>
+      <ul>
+         <!-- Link para ver el listado de candidatos -->
+        <li><a routerLink="/solicitudes" routerLinkActive="active">Listado de Solicitudes</a></li>
+         
+          <!-- Link para agregar nuevo candidato -->
+        <li><a routerLink="/solicitudes/nueva" routerLinkActive="active">Nueva Solicitud</a></li>
+      </ul>
+    </nav>
 
   </div>
   
