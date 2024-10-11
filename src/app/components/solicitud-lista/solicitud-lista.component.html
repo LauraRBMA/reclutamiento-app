@@ -1,33 +1,38 @@
 <h2>Lista de Solicitudes</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Nombre Completo</th>
-      <th>Email</th>
-      <th>Edad</th>
-      <th>Años de Experiencia</th>
-      <th>Puesto Solicitado</th>
-      <th>Fecha de Solicitud</th>
-      <th>Estado</th>
-      <th>Acciones</th>
-    </tr>
-  </thead>
-  <tbody>
-  
-    @for (solicitud of solicitudes; track solicitud.id) {
+
+<div class="search-container">
+  <input type="text" placeholder="Buscar..." (input)="filtrarSolicitudes($event)">
+</div>
+
+<div class="solicitud-lista">
+  <table class="styled-table">
+    <thead>
       <tr>
-      <td>{{ solicitud.nombreCompleto }}</td>
-      <td>{{ solicitud.email }}</td>
-      <td>{{ solicitud.edad }}</td>
-      <td>{{ solicitud.aniosExperiencia }}</td>
-      <td>{{ solicitud.puestoSolicitado }}</td>
-      <td>{{ solicitud.fechaSolicitud }}</td>
-      <td>{{ solicitud.estado }}</td>
-      <td>
-        <a [routerLink]="['/solicitudes/editar', solicitud.id]">Editar</a>
-      </td>
-    
-    </tr>
-  }
-  </tbody>
-</table>
+        <th>Nombre Completo</th>
+        <th>Email</th>
+        <th>Edad</th>
+        <th>Años de Experiencia</th>
+        <th>Puesto Solicitado</th>
+        <th>Fecha de Solicitud</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (solicitud of solicitudes; track solicitud.id) {
+        <tr>
+          <td>{{ solicitud.nombreCompleto }}</td>
+          <td>{{ solicitud.email }}</td>
+          <td>{{ solicitud.edad }}</td>
+          <td>{{ solicitud.aniosExperiencia }}</td>
+          <td>{{ solicitud.puestoSolicitado }}</td>
+          <td>{{ solicitud.fechaSolicitud }}</td>
+          <td>{{ solicitud.estado }}</td>
+          <td>
+            <a [routerLink]="['/solicitudes/editar', solicitud.id]">Editar</a>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

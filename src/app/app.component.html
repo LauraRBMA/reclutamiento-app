@@ -1,13 +1,29 @@
-
+<!-- 
 <div class="app-container">
 
 
   <main>
-    <!-- Aquí se insertan los componentes según la ruta activa -->
+
     <router-outlet></router-outlet>
   </main>
 
   <footer>
-    <p>&copy; 2024 Empresa Tecnológica. Todos los derechos reservados.</p>
+    <p>&copy; 2024 Empresa Tecnológica. </p>
+  </footer>
+</div> -->
+<nav class="navbar">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">Inicio</a>
+    <a class="nav-link" routerLink="/solicitud-nueva">Nueva Solicitud</a>
+    <a class="nav-link" routerLink="/solicitudes">Lista de Solicitudes</a>
+  </div>
+</nav>
+
+<div class="app-container">
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+  <footer>
+    <p>&copy; 2024 Empresa Tecnológica.</p>
   </footer>
 </div>

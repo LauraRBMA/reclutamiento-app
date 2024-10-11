@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router } from '@angular/router';
 import { Solicitud } from '../../models/solicitud.model';
 import { SolicitudService } from '../../services/solicitud.service';
+import { CustomValidators } from '../../validators/validators';
 
 @Component({
   selector: 'app-solicitud-nueva',
@@ -17,10 +18,10 @@ export class SolicitudNuevaComponent {
 
   constructor(private fb: FormBuilder, private solicitudService: SolicitudService, private router: Router) {
     this.solicitudForm = this.fb.group({
-      nombreCompleto: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      fechaNacimiento: ['', Validators.required],
-      aniosExperiencia: ['', [Validators.required, Validators.min(0)]],
+      nombreCompleto: ['', [CustomValidators.nombreCompleto()]],
+      email: ['', [CustomValidators.email()]],
+      fechaNacimiento: ['', [CustomValidators.fechaNacimiento()]],
+      aniosExperiencia: ['', [CustomValidators.aniosExperiencia()]],
       puestoSolicitado: ['', Validators.required],
       estado: ['en espera', Validators.required]
     });
