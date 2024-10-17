@@ -57,8 +57,7 @@
       <input type="date" id="fechaSolicitud" formControlName="fechaSolicitud"/>
     </div>
     <div class="form-button">
-      <!-- <button type="submit" (click)="guardarSolicitud()" [disabled]="solicitudForm.invalid">Guardar</button> -->
-      <button type="submit" (click)="guardarSolicitud()">Guardar</button>
+      <button type="button" (click)="guardarSolicitud()" [disabled]="solicitudForm.invalid">Guardar</button>
       <button type="button" (click)="cancelar()">Cancelar</button>
     </div>
   </form>

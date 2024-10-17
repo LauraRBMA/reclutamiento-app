@@ -42,15 +42,83 @@
       "estado": "en espera"
     },
     {
-      "nombreCompleto": "Juan Pérez",
+      "nombreCompleto": "Cunchis",
       "email": "juan.perez@email.com",
-      "fechaNacimiento": "1990-05-15",
+      "fechaNacimiento": "1999-11-02",
       "aniosExperiencia": 5,
       "puestoSolicitado": "Desarrollador",
-      "estado": "rechazado",
+      "estado": "aprobado",
       "fechaSolicitud": "2023-09-15",
       "id": "5",
-      "edad": 34
+      "edad": 24
+    },
+    {
+      "0": {
+        "id": "1",
+        "nombreCompleto": "Juan Pérez",
+        "email": "juan.perez@email.com",
+        "fechaNacimiento": "1990-05-15T00:00:00.000Z",
+        "aniosExperiencia": 5,
+        "puestoSolicitado": "Desarrollador",
+        "fechaSolicitud": "2023-09-15T00:00:00.000Z",
+        "estado": "en espera",
+        "edad": 34
+      },
+      "1": {
+        "id": "2",
+        "nombreCompleto": "Ana García",
+        "email": "ana.garcia@email.com",
+        "fechaNacimiento": "1988-03-10T00:00:00.000Z",
+        "aniosExperiencia": 8,
+        "puestoSolicitado": "Gerente de Proyectos",
+        "fechaSolicitud": "2023-09-10T00:00:00.000Z",
+        "estado": "en espera",
+        "edad": 36
+      },
+      "2": {
+        "id": "3",
+        "nombreCompleto": "Juan Pérez",
+        "email": "juan.perez@email.com",
+        "fechaNacimiento": "1990-05-15T00:00:00.000Z",
+        "aniosExperiencia": 5,
+        "puestoSolicitado": "Desarrollador",
+        "fechaSolicitud": "2023-09-15T00:00:00.000Z",
+        "estado": "aprobado",
+        "edad": 34
+      },
+      "3": {
+        "id": "4",
+        "nombreCompleto": "Ana García",
+        "email": "ana.garcia@email.com",
+        "fechaNacimiento": "1988-03-10T00:00:00.000Z",
+        "aniosExperiencia": 8,
+        "puestoSolicitado": "Gerente de Proyectos",
+        "fechaSolicitud": "2023-09-10T00:00:00.000Z",
+        "estado": "en espera",
+        "edad": 36
+      },
+      "4": {
+        "nombreCompleto": "Cunchis",
+        "email": "juan.perez@email.com",
+        "fechaNacimiento": "1999-11-02",
+        "aniosExperiencia": 5,
+        "puestoSolicitado": "Desarrollador",
+        "estado": "aprobado",
+        "fechaSolicitud": "2023-09-15",
+        "id": "5",
+        "edad": 24
+      },
+      "5": {
+        "id": "1729155971315",
+        "nombreCompleto": "Carasui",
+        "email": "carasui@gmail.com",
+        "fechaNacimiento": "1996-05-02T00:00:00.000Z",
+        "aniosExperiencia": 10,
+        "puestoSolicitado": "Dios",
+        "fechaSolicitud": "2024-10-17T09:06:11.315Z",
+        "estado": "en espera",
+        "edad": 28
+      }
     }
   ]
 }
