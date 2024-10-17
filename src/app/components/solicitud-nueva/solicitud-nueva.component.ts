@@ -29,9 +29,10 @@ export class SolicitudNuevaComponent {
   }
 
   onSubmit(): void {
+    console.log(this.solicitudForm.value);
     if (this.solicitudForm.valid) {
       const nuevaSolicitud = new Solicitud(
-        Date.now(), // Generar un ID único
+        Date.now().toString(), // Generar un ID único
         this.solicitudForm.value.nombreCompleto,
         this.solicitudForm.value.email,
         new Date(this.solicitudForm.value.fechaNacimiento),

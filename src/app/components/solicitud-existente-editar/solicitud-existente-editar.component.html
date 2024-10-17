@@ -1,7 +1,7 @@
 <div class="container solicitud-editar">
   <h1>Editar Solicitud</h1>
 
-  <form [formGroup]="solicitudForm" (ngSubmit)="guardarSolicitud()" class="form-container">
+  <form [formGroup]="solicitudForm" class="form-container">
     <div class="form-group">
       <label for="nombreCompleto">Nombre Completo:</label>
       <input type="text" id="nombreCompleto" formControlName="nombreCompleto" required />
@@ -57,7 +57,8 @@
       <input type="date" id="fechaSolicitud" formControlName="fechaSolicitud"/>
     </div>
     <div class="form-button">
-      <button type="submit" [disabled]="solicitudForm.invalid">Guardar</button>
+      <!-- <button type="submit" (click)="guardarSolicitud()" [disabled]="solicitudForm.invalid">Guardar</button> -->
+      <button type="submit" (click)="guardarSolicitud()">Guardar</button>
       <button type="button" (click)="cancelar()">Cancelar</button>
     </div>
   </form>

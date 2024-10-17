@@ -15,6 +15,7 @@ import { CustomValidators } from './../../validators/validators';
 })
 export class SolicitudExistenteComponent implements OnInit {
   solicitudForm: FormGroup;
+  solicitudId: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -30,6 +31,7 @@ export class SolicitudExistenteComponent implements OnInit {
       puestoSolicitado: ['', [Validators.required]],
       estado: ['en espera', [Validators.required]],
       fechaSolicitud: [{ value: '', disabled: true }, [Validators.required]], // Campo deshabilitado
+      
     });
   }
 
@@ -38,6 +40,7 @@ export class SolicitudExistenteComponent implements OnInit {
     if (id) {
       this.solicitudService.obtenerSolicitudPorId(+id).subscribe((solicitud) => {
         this.solicitudForm.patchValue(solicitud);
+        this.solicitudId = id;
       });
     }
   }
@@ -55,6 +58,7 @@ export class SolicitudExistenteComponent implements OnInit {
   guardarSolicitud(): void {
     if (this.solicitudForm.valid) {
       const solicitud: Solicitud = this.solicitudForm.getRawValue();
+      solicitud.id = this.solicitudId;
       this.solicitudService.actualizarSolicitud(solicitud).subscribe(() => {
         this.router.navigate(['/solicitudes']);
       });

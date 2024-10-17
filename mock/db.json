@@ -1,17 +1,18 @@
-{ "solicitudes":
-  [
+{
+  "solicitudes": [
     {
-      "id": 1,
       "nombreCompleto": "Juan Pérez",
       "email": "juan.perez@email.com",
       "fechaNacimiento": "1990-05-15",
       "aniosExperiencia": 5,
       "puestoSolicitado": "Desarrollador",
+      "estado": "en espera",
       "fechaSolicitud": "2023-09-15",
-      "estado": "aprobado"
+      "id": "1",
+      "edad": 34
     },
     {
-      "id": 2,
+      "id": "2",
       "nombreCompleto": "Ana García",
       "email": "ana.garcia@email.com",
       "fechaNacimiento": "1988-03-10",
@@ -21,27 +22,7 @@
       "estado": "en espera"
     },
     {
-        "id": 3,
-        "nombreCompleto": "Juan Pérez",
-        "email": "juan.perez@email.com",
-        "fechaNacimiento": "1990-05-15",
-        "aniosExperiencia": 5,
-        "puestoSolicitado": "Desarrollador",
-        "fechaSolicitud": "2023-09-15",
-        "estado": "aprobado"
-      },
-      {
-        "id": 4,
-        "nombreCompleto": "Ana García",
-        "email": "ana.garcia@email.com",
-        "fechaNacimiento": "1988-03-10",
-        "aniosExperiencia": 8,
-        "puestoSolicitado": "Gerente de Proyectos",
-        "fechaSolicitud": "2023-09-10",
-        "estado": "en espera"
-      },
-      {      
-      "id": 5,
+      "id": "3",
       "nombreCompleto": "Juan Pérez",
       "email": "juan.perez@email.com",
       "fechaNacimiento": "1990-05-15",
@@ -51,7 +32,7 @@
       "estado": "aprobado"
     },
     {
-      "id": 6,
+      "id": "4",
       "nombreCompleto": "Ana García",
       "email": "ana.garcia@email.com",
       "fechaNacimiento": "1988-03-10",
@@ -59,7 +40,17 @@
       "puestoSolicitado": "Gerente de Proyectos",
       "fechaSolicitud": "2023-09-10",
       "estado": "en espera"
+    },
+    {
+      "nombreCompleto": "Juan Pérez",
+      "email": "juan.perez@email.com",
+      "fechaNacimiento": "1990-05-15",
+      "aniosExperiencia": 5,
+      "puestoSolicitado": "Desarrollador",
+      "estado": "rechazado",
+      "fechaSolicitud": "2023-09-15",
+      "id": "5",
+      "edad": 34
     }
-    
   ]
 }

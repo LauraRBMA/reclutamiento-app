@@ -1,28 +1,50 @@
-import { calcularEdad } from '../utils/date-utils';
 import { Solicitud } from './solicitud.model';
 
 describe('Solicitud', () => {
-  it('should create an instance of Solicitud', () => {
-    const solicitud = new Solicitud(1, 'John Doe', 'john.doe@example.com', new Date('1990-01-01'), 5, 'Developer', '2023-01-01', 'Pending');
-    expect(solicitud).toBeTruthy();
-  });
+  it('debería crear una instancia con los valores correctos', () => {
+    const solicitud = new Solicitud(
+      1,
+      'Juan Pérez',
+      'juan.perez@example.com',
+      new Date('1990-01-01'),
+      5,
+      'Desarrollador',
+      '2023-10-01',
+      'en espera',
+      33
+    );
 
-  it('should set properties correctly through the constructor', () => {
-    const solicitud = new Solicitud(1, 'John Doe', 'john.doe@example.com', new Date('1990-01-01'), 5, 'Developer', '2023-01-01', 'Pending');
     expect(solicitud.id).toBe(1);
-    expect(solicitud.nombreCompleto).toBe('John Doe');
-    expect(solicitud.email).toBe('john.doe@example.com');
+    expect(solicitud.nombreCompleto).toBe('Juan Pérez');
+    expect(solicitud.email).toBe('juan.perez@example.com');
     expect(solicitud.fechaNacimiento).toEqual(new Date('1990-01-01'));
     expect(solicitud.aniosExperiencia).toBe(5);
-    expect(solicitud.puestoSolicitado).toBe('Developer');
-    expect(solicitud.fechaSolicitud).toBe('2023-01-01');
-    expect(solicitud.estado).toBe('Pending');
+    expect(solicitud.puestoSolicitado).toBe('Desarrollador');
+    expect(solicitud.fechaSolicitud).toBe('2023-10-01');
+    expect(solicitud.estado).toBe('en espera');
+    expect(solicitud.edad).toBe(33);
   });
 
-  it('should calculate age correctly using calcularEdad function', () => {
-    const fechaNacimiento = new Date('1990-01-01');
-    const solicitud = new Solicitud(1, 'John Doe', 'john.doe@example.com', fechaNacimiento, 5, 'Developer', '2023-01-01', 'Pending');
-    const expectedAge = calcularEdad(fechaNacimiento);
-    expect(expectedAge).toBe((new Date().getFullYear() - fechaNacimiento.getFullYear()).toString());
+  it('debería crear una instancia sin el campo opcional edad', () => {
+    const solicitud = new Solicitud(
+      2,
+      'María López',
+      'maria.lopez@example.com',
+      new Date('1985-05-15'),
+      10,
+      'Gerente de Proyecto',
+      '2023-10-01',
+      'en espera'
+    );
+
+    expect(solicitud.id).toBe(2);
+    expect(solicitud.nombreCompleto).toBe('María López');
+    expect(solicitud.email).toBe('maria.lopez@example.com');
+    expect(solicitud.fechaNacimiento).toEqual(new Date('1985-05-15'));
+    expect(solicitud.aniosExperiencia).toBe(10);
+    expect(solicitud.puestoSolicitado).toBe('Gerente de Proyecto');
+    expect(solicitud.fechaSolicitud).toBe('2023-10-01');
+    expect(solicitud.estado).toBe('en espera');
+    expect(solicitud.edad).toBeUndefined();
   });
 });

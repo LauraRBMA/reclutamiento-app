@@ -77,7 +77,7 @@ export class SolicitudesListComponent implements OnInit {
     this.ordenarSolicitudes();
   }
 
-  trackById(index: number, solicitud: Solicitud): number {
+  trackById(index: number, solicitud: Solicitud): string {
     return solicitud.id;
   }
 }

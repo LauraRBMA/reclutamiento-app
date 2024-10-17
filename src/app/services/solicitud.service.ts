@@ -57,7 +57,6 @@ export class SolicitudService {
     
     return defer(() => {
       const solicitudes = this.solicitudesSubject.getValue();
-      solicitud.id = solicitudes.length > 0 ? Math.max(...solicitudes.map(s => s.id)) + 1 : 1;
       solicitud.edad = parseInt(calcularEdad(solicitud.fechaNacimiento), 10);
       solicitudes.push(solicitud);
       this.solicitudesSubject.next(solicitudes);
@@ -81,7 +80,7 @@ export class SolicitudService {
   }
 
   // Método para eliminar una solicitud
-  eliminarSolicitud(id: number): Observable<void> {
+  eliminarSolicitud(id: string): Observable<void> {
     return defer(() => {
       const solicitudes = this.solicitudesSubject.getValue();
       const updatedSolicitudes = solicitudes.filter(s => s.id !== id);
@@ -92,6 +91,7 @@ export class SolicitudService {
 
   // Método para guardar las solicitudes en el archivo JSON
   private guardarSolicitudes(solicitudes: Solicitud[]): Observable<void> {
-    return this.http.put<void>(this.apiUrl, solicitudes);
+    return this.http.post<void>(this.apiUrl, solicitudes);
+    
   }
 }

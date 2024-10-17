@@ -1,4 +1,4 @@
-<form [formGroup]="solicitudForm" (ngSubmit)="onSubmit()" class="form-container solicitud-nueva-form">
+<form [formGroup]="solicitudForm" class="form-container solicitud-nueva-form">
   <div class="form-group">
     <label for="nombreCompleto">Nombre Completo</label>
     <input id="nombreCompleto" formControlName="nombreCompleto" type="text">
@@ -44,8 +44,9 @@
     <input id="puestoSolicitado" formControlName="puestoSolicitado" type="text">
   </div>
 
-  <button type="submit" [disabled]="solicitudForm.invalid">Enviar</button>
-  <button type="button" (click)="cancelar()" class="margen">Cancelar</button>
+  <!-- <button (click)="onSubmit()" [disabled]="solicitudForm.invalid">Enviar</button> -->
+  <button type="button" (click)="onSubmit()">Enviar</button>
+  <button  type="button" (click)="cancelar()" class="margen">Cancelar</button>
   
 
 </form>
