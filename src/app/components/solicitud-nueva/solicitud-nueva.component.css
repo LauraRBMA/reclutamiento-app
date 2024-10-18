@@ -22,4 +22,8 @@
   .solicitud-nueva-form .form-button button[type="submit"]:hover {
     background-color: #ff3b6b;
   }
+
+  .margen{
+    margin-left: 2rem;
+  }
   

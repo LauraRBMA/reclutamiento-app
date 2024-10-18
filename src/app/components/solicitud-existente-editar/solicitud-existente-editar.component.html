@@ -1,37 +1,63 @@
 <div class="container solicitud-editar">
   <h1>Editar Solicitud</h1>
 
-  <form (ngSubmit)="guardarSolicitud()" class="form-container">
+  <form [formGroup]="solicitudForm" class="form-container">
     <div class="form-group">
       <label for="nombreCompleto">Nombre Completo:</label>
-      <input type="text" id="nombreCompleto" [(ngModel)]="solicitud.nombreCompleto" name="nombreCompleto" required />
+      <input type="text" id="nombreCompleto" formControlName="nombreCompleto" required />
+      <div *ngIf="solicitudForm.get('nombreCompleto')?.invalid && solicitudForm.get('nombreCompleto')?.touched">
+        <small *ngIf="solicitudForm.get('nombreCompleto')?.errors?.['required']">El nombre completo es obligatorio.</small>
+        <small *ngIf="solicitudForm.get('nombreCompleto')?.errors?.['maxlength']">El nombre completo no debe tener más de 40 caracteres.</small>
+      </div>
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="email" id="email" [(ngModel)]="solicitud.email" name="email" required />
+      <input type="email" id="email" formControlName="email" required />
+      <div *ngIf="solicitudForm.get('email')?.invalid && solicitudForm.get('email')?.touched">
+        <small *ngIf="solicitudForm.get('email')?.errors?.['required']">El email es obligatorio.</small>
+        <small *ngIf="solicitudForm.get('email')?.errors?.['email']">Introduce un email válido.</small>
+      </div>
     </div>
     <div class="form-group">
       <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-      <input type="date" id="fechaNacimiento" [(ngModel)]="solicitud.fechaNacimiento" name="fechaNacimiento" required />
+      <input type="date" id="fechaNacimiento" formControlName="fechaNacimiento" required />
+      <div *ngIf="solicitudForm.get('fechaNacimiento')?.invalid && solicitudForm.get('fechaNacimiento')?.touched">
+        <small *ngIf="solicitudForm.get('fechaNacimiento')?.errors?.['required']">La fecha de nacimiento es obligatoria.</small>
+        <small *ngIf="solicitudForm.get('fechaNacimiento')?.errors?.['edadInvalida']">La edad debe ser mayor de 17 años y menor de 65 años.</small>
+      </div>
     </div>
     <div class="form-group">
       <label for="aniosExperiencia">Años de Experiencia:</label>
-      <input type="number" id="aniosExperiencia" [(ngModel)]="solicitud.aniosExperiencia" name="aniosExperiencia" required min="0" />
+      <input type="number" id="aniosExperiencia" formControlName="aniosExperiencia" required />
+      <div *ngIf="solicitudForm.get('aniosExperiencia')?.invalid && solicitudForm.get('aniosExperiencia')?.touched">
+        <small *ngIf="solicitudForm.get('aniosExperiencia')?.errors?.['required']">Los años de experiencia son obligatorios.</small>
+        <small *ngIf="solicitudForm.get('aniosExperiencia')?.errors?.['min']">Introduce un número de años válido.</small>
+      </div>
     </div>
     <div class="form-group">
       <label for="puestoSolicitado">Puesto Solicitado:</label>
-      <input type="text" id="puestoSolicitado" [(ngModel)]="solicitud.puestoSolicitado" name="puestoSolicitado" required />
+      <input type="text" id="puestoSolicitado" formControlName="puestoSolicitado" required />
+      <div *ngIf="solicitudForm.get('puestoSolicitado')?.invalid && solicitudForm.get('puestoSolicitado')?.touched">
+        <small *ngIf="solicitudForm.get('puestoSolicitado')?.errors?.['required']">El puesto solicitado es obligatorio.</small>
+      </div>
     </div>
     <div class="form-group">
       <label for="estado">Estado:</label>
-      <select id="estado" [(ngModel)]="solicitud.estado" name="estado" required>
+      <select id="estado" formControlName="estado" required>
         <option value="en espera">En espera</option>
         <option value="aprobado">Aprobado</option>
         <option value="rechazado">Rechazado</option>
       </select>
+      <div *ngIf="solicitudForm.get('estado')?.invalid && solicitudForm.get('estado')?.touched">
+        <small *ngIf="solicitudForm.get('estado')?.errors?.['required']">El estado es obligatorio.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="fechaSolicitud">Fecha de la Solicitud:</label>
+      <input type="date" id="fechaSolicitud" formControlName="fechaSolicitud"/>
     </div>
     <div class="form-button">
-      <button type="submit">Guardar</button>
+      <button type="button" (click)="guardarSolicitud()" [disabled]="solicitudForm.invalid">Guardar</button>
       <button type="button" (click)="cancelar()">Cancelar</button>
     </div>
   </form>

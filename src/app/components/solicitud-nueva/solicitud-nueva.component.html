@@ -1,34 +1,42 @@
-<form [formGroup]="solicitudForm" (ngSubmit)="onSubmit()" class="form-container solicitud-nueva-form">
+<form [formGroup]="solicitudForm" class="form-container solicitud-nueva-form">
   <div class="form-group">
     <label for="nombreCompleto">Nombre Completo</label>
     <input id="nombreCompleto" formControlName="nombreCompleto" type="text">
-    @if (solicitudForm.get('nombreCompleto')?.invalid && solicitudForm.get('nombreCompleto')?.touched) {
-      <div>El nombre completo es obligatorio.</div>
-    }
+    <div *ngIf="solicitudForm.get('nombreCompleto')?.invalid && solicitudForm.get('nombreCompleto')?.touched">
+      El nombre completo es obligatorio.
+      <div *ngIf="solicitudForm.get('nombreCompleto')?.errors?.['maxlength']">
+        El nombre completo no debe tener más de 40 caracteres.
+      </div>
+    </div>
   </div>
 
   <div class="form-group">
     <label for="email">Email</label>
     <input id="email" formControlName="email" type="email">
-    @if (solicitudForm.get('email')?.invalid && solicitudForm.get('email')?.touched) {
-      <div>Introduce un email válido.</div>
-    }
+    <div *ngIf="solicitudForm.get('email')?.invalid && solicitudForm.get('email')?.touched">
+      Introduce un email válido.
+    </div>
   </div>
 
   <div class="form-group">
     <label for="fechaNacimiento">Fecha de Nacimiento</label>
     <input id="fechaNacimiento" formControlName="fechaNacimiento" type="date">
-    @if (solicitudForm.get('fechaNacimiento')?.invalid && solicitudForm.get('fechaNacimiento')?.touched) {
-      <div>La fecha de nacimiento es obligatoria.</div>
-    }
+    <div *ngIf="solicitudForm.get('fechaNacimiento')?.invalid && solicitudForm.get('fechaNacimiento')?.touched">
+      <div *ngIf="solicitudForm.get('fechaNacimiento')?.errors?.['fechaNacimiento']">
+        La fecha de nacimiento es obligatoria.
+      </div>
+      <div *ngIf="solicitudForm.get('fechaNacimiento')?.errors?.['edad']">
+        La edad debe ser mayor de 17 años y menor de 65 años.
+      </div>
+    </div>
   </div>
 
   <div class="form-group">
     <label for="aniosExperiencia">Años de Experiencia</label>
     <input id="aniosExperiencia" formControlName="aniosExperiencia" type="number">
-    @if (solicitudForm.get('aniosExperiencia')?.invalid && solicitudForm.get('aniosExperiencia')?.touched) {
-      <div>Introduce un número de años válido.</div>
-    }
+    <div *ngIf="solicitudForm.get('aniosExperiencia')?.invalid && solicitudForm.get('aniosExperiencia')?.touched">
+      Introduce un número de años válido.
+    </div>
   </div>
 
   <div class="form-group">
@@ -36,5 +44,8 @@
     <input id="puestoSolicitado" formControlName="puestoSolicitado" type="text">
   </div>
 
-  <button type="submit">Enviar</button>
+  <button type="button" (click)="onSubmit()" [disabled]="solicitudForm.invalid">Enviar</button>
+  <button  type="button" (click)="cancelar()" class="margen">Cancelar</button>
+  
+
 </form>
